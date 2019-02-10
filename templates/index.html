@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>DormBell</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/dormbell.js') }}"></script>
+
+</head>
+
+
+
+<body id ="body">	
+<div id='warning'></div>
+		
+		<h1 id = "title">DormBell</h1>
+		<img src = "{{ url_for('static', filename='media/bell.png') }}" id="bell"/>
+		<div class="divider" src ="pattern3.jpg" id="divider"/>
+		<div class="tab">
+  		<button class="tablinks" onclick="openTab(event, 'About')">About</button>
+  		<button class="tablinks" onclick="openTab(event, 'Our Goal')">Our Goal</button>
+  		<button class="tablinks" onclick="openTab(event, 'Product')">Product</button>
+		</div>
+		
+		<div id="About" class="tabcontent">
+  		<h3>About</h3>
+ 		<p>A group of four young female computer scientists that hope to make a change in the world through computing.</p>
+		</div>
+		
+		<div id="Our Goal" class="tabcontent">
+  		<h3>Our Goal</h3>
+  		<p>Our project is a dorm alert system where the user gets notified on their device when someone either knocks or is close to their door. It could be used in such situations where the student cannot hear the knocking or if the student is not present in their room. It can help students be aware of their surroundings and ensure safety especially on campuses where dorms open directly outside the building. In the future, in scenarios where the student may feel unsafe for example late at night or while other students surrounding them are home for break, having a camera implemented outside their door will provide additional security for the student. 
+
+</p>
+		
+		</div>
+
+		<div id="Product" class="tabcontent">
+  		<h3>Product</h3>
+  		<p>Our project uses a distance sensor to sense if someone is outside of your dorm room door. It alerts the user if a visitor is close enough to your door as if they’re about to knock. An example of a situation where this project could be implemented is if the student is in their dorm room, they have headphones on and cannot hear someone knocking on their door, this project alerts the user that someone is outside. Another example is if the student is not in their room but someone knocks on the door, by using a distance sensor we are able to trigger a notification alerting the user that a person is within a certain range outside of their door. 
+
+</p>
+		<img src = "{{ url_for('static', filename='media/product.jpg') }}" id = "product_img"/>
+		</div>
+
+		<script>
+		function openTab(evt, tab) {
+ 		var i, tabcontent, tablinks;
+  		tabcontent = document.getElementsByClassName("tabcontent");
+  		for (i = 0; i < tabcontent.length; i++) {
+    		tabcontent[i].style.display = "none";
+  		}
+  		tablinks = document.getElementsByClassName("tablinks");
+  		for (i = 0; i < tablinks.length; i++) {
+    		tablinks[i].className = tablinks[i].className.replace(" active", "");
+  		}
+  		document.getElementById(tab).style.display = "block";
+  		evt.currentTarget.className += " active";
+		}
+		</script>
+	</body>
+
+
+
+</html>
